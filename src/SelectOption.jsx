@@ -1,9 +1,4 @@
 import React from 'react'
-import StudentDonor from "./StudentDonor"
-import StaffDonor from "./StaffDonor"
-import OtherDonor from "./OtherDonor"
-import GetImages from './GetImages'
-import Volunteer from './Volunteer'
 import { useNavigate } from 'react-router-dom'
 
 
@@ -21,22 +16,22 @@ export default function SelectOption() {
 
         </div>
         <div className="right_side_div">
-          <div className="option_div op1 student" onClick={()=>navigate('/blood-donation-camp-admin-portal/student/')}>
+          <div className="option_div op1 student" onClick={()=>navigate('/student')}>
             <h1>Student</h1>
           </div>
-          <div className="option_div op2 staff" onClick={()=>navigate('/blood-donation-camp-admin-portal/staff/')}>
+          <div className="option_div op2 staff" onClick={()=>navigate('/staff')}>
             <h1>Staff</h1>
           </div>
-          <div className="option_div op3 others" onClick={()=>navigate('/blood-donation-camp-admin-portal/management/')}>
+          <div className="option_div op3 others" onClick={()=>navigate('/management')}>
             <h1>Management</h1>
           </div>
-          <div className="option_div op4 others" onClick={()=>navigate('/blood-donation-camp-admin-portal/guest/')}>
+          <div className="option_div op4 others" onClick={()=>navigate('/guest')}>
             <h1>Guest</h1>
           </div>
-          <div className="option_div op5 voluteer" onClick={()=>navigate('/blood-donation-camp-admin-portal/volunteer/')}>
+          <div className="option_div op5 voluteer" onClick={()=>navigate('/volunteer')}>
             <h1>Volunteer</h1>
           </div>
-          <div className="option_div op6 galary" onClick={()=>navigate('/blood-donation-camp-admin-portal/getimages/')}>
+          <div className="option_div op6 galary" onClick={()=>navigate('/getimages')}>
             <h1>Gallary</h1>
           </div>
         </div>
