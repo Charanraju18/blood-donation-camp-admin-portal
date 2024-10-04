@@ -16,7 +16,7 @@ export default function Login() {
 
   const handleSubmit = () =>{
     if(userData.userName===dataBase[0].adminName && userData.userPassword===dataBase[0].adminPassword){
-        navigate('/blood-donation-camp-admin-portal/selectoptions/')
+        navigate('/selectoptions')
     }
     else{
       console.log("not admin");

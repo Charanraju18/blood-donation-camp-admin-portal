@@ -15,7 +15,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/blood-donation-camp-admin-portal/' element={<Login/>}/>
-          <Route path='/blood-donation-camp-admin-portal/selectoptions/' element={<SelectOption/>}/>
+          <Route path='/blood-donation-camp-admin-portal/selectoptions' element={<SelectOption/>}/>
           <Route path='/blood-donation-camp-admin-portal/student/' element={<StudentDonor/>}/>
           <Route path='/blood-donation-camp-admin-portal/staff/' element={<StaffDonor/>}/>
           <Route path='/blood-donation-camp-admin-portal/management/' element={<OtherDonor/>}/>
