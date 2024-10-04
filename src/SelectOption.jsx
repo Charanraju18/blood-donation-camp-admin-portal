@@ -21,22 +21,22 @@ export default function SelectOption() {
 
         </div>
         <div className="right_side_div">
-          <div className="option_div op1 student" onClick={()=>navigate('/student')}>
+          <div className="option_div op1 student" onClick={()=>navigate('/blood-donation-camp-admin-portal/student/')}>
             <h1>Student</h1>
           </div>
-          <div className="option_div op2 staff" onClick={()=>navigate('/staff')}>
+          <div className="option_div op2 staff" onClick={()=>navigate('/blood-donation-camp-admin-portal/staff/')}>
             <h1>Staff</h1>
           </div>
-          <div className="option_div op3 others" onClick={()=>navigate('/management')}>
+          <div className="option_div op3 others" onClick={()=>navigate('/blood-donation-camp-admin-portal/management/')}>
             <h1>Management</h1>
           </div>
-          <div className="option_div op4 others" onClick={()=>navigate('/guest')}>
+          <div className="option_div op4 others" onClick={()=>navigate('/blood-donation-camp-admin-portal/guest/')}>
             <h1>Guest</h1>
           </div>
-          <div className="option_div op5 voluteer" onClick={()=>navigate('/volunteer')}>
+          <div className="option_div op5 voluteer" onClick={()=>navigate('/blood-donation-camp-admin-portal/volunteer/')}>
             <h1>Volunteer</h1>
           </div>
-          <div className="option_div op6 galary" onClick={()=>navigate('/getimages')}>
+          <div className="option_div op6 galary" onClick={()=>navigate('/blood-donation-camp-admin-portal/getimages/')}>
             <h1>Gallary</h1>
           </div>
         </div>
