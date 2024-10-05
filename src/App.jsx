@@ -1,13 +1,11 @@
-import './App.css';
 import Login from './Login';
 import SelectOption from './SelectOption';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import StudentDonor from './StudentDonor';
 import StaffDonor from './StaffDonor';
 import OtherDonor from './OtherDonor';
 import Volunteer from './Volunteer';
 import GetImages from './GetImages';
-import { HashRouter as Router } from 'react-router-dom';
 
 function App() {
   return (

@@ -11,7 +11,10 @@ export default function SelectOption() {
   return (
     <>
       <div className='options'>
-        <div className="left_side_div"></div>
+        <div className="left_side_div">
+          
+
+        </div>
         <div className="right_side_div">
           <h1>Select Donor</h1>
           <div className="option_container">
