@@ -2,7 +2,7 @@ import React from 'react'
 
 function Volunteer() {
   return (
-	<div>Volunteer</div>
+	<h1>Volunteer page</h1>
   )
 }
 
