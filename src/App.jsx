@@ -11,16 +11,16 @@ import GetImages from './GetImages';
 function App() {
   return (
     <>
-      <BrowserRouter basename="/blood-donation-camp-admin-portal">
+      <BrowserRouter basename="/blood-donation-camp-admin-portal/">
         <Routes>
           <Route path='/' element={<Login />} />
-          <Route path='/selectoptions' element={<SelectOption />} />
-          <Route path='/student' element={<StudentDonor />} />
-          <Route path='/staff' element={<StaffDonor />} />
-          <Route path='/management' element={<OtherDonor />} />
-          <Route path='/guest' element={<OtherDonor />} />
-          <Route path='/volunteer' element={<Volunteer />} />
-          <Route path='/getimages' element={<GetImages />} />
+          <Route path='/selectoptions/' element={<SelectOption />} />
+          <Route path='/student/' element={<StudentDonor />} />
+          <Route path='/staff/' element={<StaffDonor />} />
+          <Route path='/management/' element={<OtherDonor />} />
+          <Route path='/guest/' element={<OtherDonor />} />
+          <Route path='/volunteer/' element={<Volunteer />} />
+          <Route path='/getimages/' element={<GetImages />} />
         </Routes>
       </BrowserRouter>
     </>

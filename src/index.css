@@ -49,7 +49,6 @@ button:hover{
 .options {
 	width: 100%;
 	height: 125svh;
-	background-color: pink;
 	display: flex;
 	flex-direction: row;
 }
@@ -78,13 +77,13 @@ button:hover{
 
 	.left_side_div {
 		width: 100%;
-		height: 25%;
+		height: 15%;
 		background-color: rgb(49, 115, 231);
 	}
 
 	.right_side_div {
 		width: 100%;
-		height: 75%;
+		height: 85%;
 	}
 }
 .right_side_div h1 {
@@ -127,7 +126,7 @@ button:hover{
 @media (max-width: 768px) {
 	.left_side_div {
 		width: 100%;
-		height: 15vh;
+		height: 16vh;
 	}
 
 	.right_side_div {
@@ -148,7 +147,7 @@ button:hover{
 
 	.left_side_div {
 		width: 100%;
-		height: 10vh;
+		height: 13vh;
 	}
 
 	.right_side_div {
