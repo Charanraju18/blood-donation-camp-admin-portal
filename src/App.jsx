@@ -7,11 +7,12 @@ import StaffDonor from './StaffDonor';
 import OtherDonor from './OtherDonor';
 import Volunteer from './Volunteer';
 import GetImages from './GetImages';
+import { HashRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
     <>
-      <BrowserRouter basename="/blood-donation-camp-admin-portal/">
+      <Router>
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/selectoptions/' element={<SelectOption />} />
@@ -22,7 +23,7 @@ function App() {
           <Route path='/volunteer/' element={<Volunteer />} />
           <Route path='/getimages/' element={<GetImages />} />
         </Routes>
-      </BrowserRouter>
+      </Router>
     </>
   );
 }

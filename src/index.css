@@ -112,7 +112,7 @@ button:hover{
 	align-items: center;
 	cursor: pointer;
 	background-color: #f9f9f9;
-	transition: background-color 0.3s ease;
+	transition: 0.3s ease;
 }
 
 .option_div:hover {
@@ -140,7 +140,7 @@ button:hover{
 	}
 }
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
 	.options {
 		flex-direction: column;
 	}
@@ -168,4 +168,4 @@ button:hover{
 	.option_div h1 {
 		font-size: 1.2rem;
 	}
-}
+} */
