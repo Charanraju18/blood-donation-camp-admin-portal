@@ -41,7 +41,7 @@ button{
 }
 button:hover{
 	color: black;
-	background-color: white;
+	background-color: grey;
 	border: 2px solid white;
 	cursor: pointer;
 }
@@ -246,21 +246,45 @@ button:hover{
 		width: 100%;
 	}
 }
-.donor{
-	width: fit-content;
+
+
+.donor {
+    width: 100%;
+	max-width: 350px;
 	height: fit-content;
-	border: 2px solid black;
-	padding: 2%;
+    border: 2px solid black;
+    background: linear-gradient(to bottom, #e57373, #c62828);
+    border-radius: 25px;
+    padding: 2% 4%;
+    margin: auto;
+}
+
+.donor input,
+.donor select {
+    width: 100%;
+    max-width: 250px;
+    margin: 5px 0;
+	font-size: 1.2rem;
 }
 .donor .sub{
 	width: 100%;
 	display: flex;
 	justify-content: center;
 }
-.donor input,
-.donor select{
-	width: 200px;
+
+.donor label {
+    font-size: 1.2rem;
 }
+
 .donor .gender{
 	width: auto;
 }
+
+/* @media (max-width: 600px) {
+
+    .donor input,
+    .donor select,
+    .donor label {
+        font-size: 1.5rem;
+    }
+} */
