@@ -48,15 +48,22 @@ button:hover{
 
 .options {
 	width: 100%;
-	height: 125svh;
+	height: 120svh;
 	display: flex;
 	flex-direction: row;
 }
 
 .left_side_div {
 	width: 25%;
-	height: 125svh;
+	height: 100%;
 	background-color: rgb(49, 115, 231);
+	color: white;
+	font-weight: 900;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
 }
 
 .right_side_div {
@@ -70,22 +77,6 @@ button:hover{
 	justify-content: flex-start;
 }
 
-@media (max-width: 1200px) {
-	.options {
-		flex-direction: column;
-	}
-
-	.left_side_div {
-		width: 100%;
-		height: 15%;
-		background-color: rgb(49, 115, 231);
-	}
-
-	.right_side_div {
-		width: 100%;
-		height: 85%;
-	}
-}
 .right_side_div h1 {
 	font-size: 2rem;
 	margin: 20px 0;
@@ -140,7 +131,7 @@ button:hover{
 	}
 }
 
-/* @media (max-width: 480px) {
+@media (max-width: 480px) {
 	.options {
 		flex-direction: column;
 	}
@@ -168,4 +159,79 @@ button:hover{
 	.option_div h1 {
 		font-size: 1.2rem;
 	}
-} */
+}
+
+.left_side_div .progress-bar{
+	height: fit-content;
+	width: fit-content;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+.left_side_div .progress-bar .step {
+	margin: 2.5rem 2rem;
+	font-size: 22px;
+	border: 2px solid black;
+	box-sizing: border-box;
+	width: 38.8px;
+	height: 38.8px;
+	text-align: center;
+	padding: 5px;
+	border-radius: 50%;
+	background-color: black;
+	position: relative;
+  }
+
+
+
+@media (min-width: 1201px) {
+	.left_side_div .progress-bar .step::after {
+		content: '';
+		position: absolute;
+		top: 100%;
+		left: 50%;
+		width: 2px;
+		height: 7rem;
+		background-color: black;
+	 }
+
+	  .left_side_div .progress-bar .step:last-child::after {
+		content: none;
+		}
+  }
+
+@media (max-width: 1200px) {
+	.options {
+		flex-direction: column;
+	}
+	.left_side_div .progress-bar{
+		flex-direction: row;
+	}
+	.left_side_div .progress-bar .step{
+		margin: auto 2rem;
+		font-size: 22px;
+	}
+	.left_side_div {
+		width: 100%;
+		height: 15%;
+		background-color: rgb(49, 115, 231);
+	}
+
+	.right_side_div {
+		width: 100%;
+		height: 85%;
+	}
+	.left_side_div .progress-bar .step::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		right: -4.5rem;
+		width: 4.5rem;
+		height: 2px;
+		background-color: black;
+	 }
+
+	  .left_side_div .progress-bar .step:last-child::after {
+		content: none;
+	 }
+}

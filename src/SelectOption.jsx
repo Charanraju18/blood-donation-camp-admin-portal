@@ -12,8 +12,20 @@ export default function SelectOption() {
     <>
       <div className='options'>
         <div className="left_side_div">
-          
-
+          <div className="progress-bar">
+            <div className="step">
+              <span>1</span>
+            </div>
+            <div className="step">
+              <span>2</span>
+            </div>
+            <div className="step">
+              <span>3</span>
+            </div>
+            <div className="step">
+              <span>4</span>
+            </div>
+          </div>
         </div>
         <div className="right_side_div">
           <h1>Select Donor</h1>
