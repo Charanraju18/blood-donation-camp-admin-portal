@@ -10,12 +10,6 @@ function Leftside_Div(){
 			  <div className="step">
 				<span>2</span>
 			  </div>
-			  <div className="step">
-				<span>3</span>
-			  </div>
-			  <div className="step">
-				<span>4</span>
-			  </div>
 			</div>
 		</div>
 	)
