@@ -48,7 +48,7 @@ button:hover{
 
 .options {
 	width: 100%;
-	height: 120svh;
+	height: 130svh;
 	display: flex;
 	flex-direction: row;
 }
@@ -74,13 +74,13 @@ button:hover{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	position: relative;
 	justify-content: flex-start;
 }
 
 .right_side_div h1 {
 	font-size: 2rem;
 	margin: 20px 0;
-	color: #333;
 }
 
 .option_container {
@@ -107,7 +107,8 @@ button:hover{
 }
 
 .option_div:hover {
-	background-color: #f1f1f1;
+	background-color: black;
+	color: white;
 }
 
 .option_div h1 {
@@ -288,3 +289,15 @@ button:hover{
         font-size: 1.5rem;
     }
 } */
+
+
+.next_btn_div{
+	width: 75%;
+	height: 8svh;
+	/* background-color: pink; */
+	margin: 10px;
+	display: flex;
+	justify-content: center;
+	position: fixed;
+	bottom: 0;
+}

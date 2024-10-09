@@ -1,5 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import Next_btn from './Next_btn';
+
 
 function Rightside_Div(){
 	const navigate = useNavigate();
@@ -7,7 +9,7 @@ function Rightside_Div(){
 		<div className="right_side_div">
 			<h1>Select Donor</h1>
 			<div className="option_container">
-			  <div className="option_div op1 student" onClick={() => navigate('/student/')}>
+			  <div className="option_div op1 student" onClick={() => console.log('/student/')}>
 				<h1>Student</h1>
 			  </div>
 			  <div className="option_div op2 staff" onClick={() => navigate('/staff/')}>
@@ -29,6 +31,7 @@ function Rightside_Div(){
 				<h1>Gallary</h1>
 			  </div>
 			</div>
+			<Next_btn/>
 		</div>
 	)
 }
