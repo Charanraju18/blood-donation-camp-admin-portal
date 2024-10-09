@@ -70,7 +70,7 @@ export default function OtherDonor() {
         <Leftside_Div/>
         <div className='form'>
         <form onSubmit={handleSubmit} className='donor'>
-          <h2>Donor Details</h2>
+          <h2>Guest Details</h2>
           <br />
           <div>
             <label>

@@ -1,15 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+function Next_btn({ comp }) {
+	const navigate = useNavigate();
+    const handleNext = () => {
+        navigate(comp)
+    };
 
-function Next_btn() {
-
-	const handleNext = () => {
-		
-	}
-  return (
-	<div className='next_btn_div'>
-		<button onClick={handleNext}>Next</button>
-	</div>
-  )
+    return (
+        <div className='next_btn_div'>
+            <button onClick={handleNext}>Next</button>
+        </div>
+    );
 }
 
-export default Next_btn
+export default Next_btn;
