@@ -56,7 +56,6 @@ button:hover{
 .left_side_div {
 	width: 25%;
 	height: 100%;
-	background-color: rgb(49, 115, 231);
 	color: white;
 	font-weight: 900;
 
@@ -163,19 +162,22 @@ button:hover{
 	flex-direction: column;
 }
 .left_side_div .progress-bar .step {
-	margin: 2.5rem 2rem;
-	font-size: 22px;
+	margin: 7rem 2rem;
+	font-size: 1.5rem;
 	border: 2px solid black;
 	box-sizing: border-box;
-	width: 38.8px;
-	height: 38.8px;
-	text-align: center;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	padding: 5px;
 	border-radius: 50%;
-	background-color: black;
+	background-color: green;
+	z-index: 2;
+	color: black;
 	position: relative;
   }
-
 
 
 @media (min-width: 1201px) {
@@ -185,7 +187,7 @@ button:hover{
 		top: 100%;
 		left: 50%;
 		width: 2px;
-		height: 7rem;
+		height: 15rem;
 		background-color: black;
 	 }
 
