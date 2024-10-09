@@ -112,6 +112,7 @@ button:hover{
 @media (max-width: 768px) {
 	.left_side_div {
 		width: 100%;
+		height: 15vh;
 	}
 
 	.right_side_div {
@@ -132,6 +133,7 @@ button:hover{
 
 	.left_side_div {
 		width: 100%;
+		height: 10vh;
 	}
 
 	.right_side_div {
@@ -195,7 +197,7 @@ button:hover{
 		content: none;
 		}
         .left_side_div{
-            background-image: url(https://th.bing.com/th/id/OIP.h15Bq6aeta332FJVnLRcaQAAAA?pid=ImgDet&w=163&h=350&c=7&dpr=1.3);
+            background-image: url('./lsd_img_1200.jpeg');
             background-size: cover;
             background-position: center;
         }
@@ -214,8 +216,7 @@ button:hover{
 	}
 	.left_side_div {
 		width: 100%;
-		height: 15%;
-		background-image: url(https://static.vecteezy.com/system/resources/previews/008/191/708/original/human-blood-donate-and-heart-rate-on-white-background-free-vector.jpg);
+		background-image: url('./lsd_img_768.jpg');
         background-size:cover;
         background-position: center;
 	}
