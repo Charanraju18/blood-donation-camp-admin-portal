@@ -205,7 +205,7 @@ button:hover{
 		content: none;
 		}
         .left_side_div{
-            background-image: url('./lsd_img_1200.jpeg');
+            background-image: url('./assets/lsd_img_1200.jpeg');
             background-size: cover;
             background-position: center;
         }
@@ -228,7 +228,7 @@ button:hover{
 	}
 	.left_side_div {
 		width: 100%;
-		background-image: url('./lsd_img_768.jpg');
+		background-image: url('./assets/lsd_img_768.jpg');
         background-size:cover;
         background-position: center;
 	}
