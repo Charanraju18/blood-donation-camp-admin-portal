@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Next_btn from './Next_btn';
 
-function Rightside_Div() {
+function Rightside_Div(props) {
     const navigate = useNavigate();
     const [comp, setComp] = useState('');
     const [selectedOption, setSelectedOption] = useState('');
@@ -76,7 +76,7 @@ function Rightside_Div() {
                     <h1>Gallery</h1>
                 </div>
             </div>
-            <Next_btn comp={comp} />
+            <Next_btn comp={comp} fun={props.fun}/>
         </div>
     );
 }

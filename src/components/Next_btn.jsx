@@ -1,15 +1,11 @@
-import {React, useState} from 'react';
+import {React} from 'react';
 import { useNavigate } from 'react-router-dom';
-import Leftside_Div from './Leftside_Div';
-function Next_btn({ comp }) {
-    const [step, setstep] = useState(1)
+function Next_btn({ comp , fun}) {
 	const navigate = useNavigate();
 
     const handleNext = () => {
-        setstep(step+1);
-        <Leftside_Div steps={step}/>
+        fun();
         navigate(comp)
-        console.log(step)
     };
 
     return (
