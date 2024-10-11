@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Form, Button, Col, Row, Container } from "react-bootstrap";
 // import 'bootstrap/dist/css/bootstrap.min.css';   //included in your App component
 
-const Volunteer = () => {
+const AddVolunteers = () => {
   const [validated, setValidated] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -44,10 +44,10 @@ const Volunteer = () => {
 
   return (
     <Container fluid className="form-container d-flex justify-content-center align-items-center" >
-      <Form noValidate validated={validated} onSubmit={handleSubmit} className="p-4 form-box" style={{ maxWidth: "600px" }}>
+      <Form noValidate validated={validated} onSubmit={handleSubmit} className="p-4 form-box" style={{ maxWidth: "600px" }}> 
         <h3 className="text-center mb-4">Volunteer Registration Form</h3>
-
-        <Col className="mb-3">
+         
+        <Col className="mb-3"> 
           {/* Name Field */}
           <Form.Group as={Col}  controlId="name">
             <Form.Label>Name</Form.Label>
@@ -144,5 +144,5 @@ const Volunteer = () => {
   );
 };
 
-export default Volunteer;
+export default AddVolunteers;
 

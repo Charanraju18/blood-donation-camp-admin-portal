@@ -1,283 +1,351 @@
-
-import React, { useState } from 'react';
-import Leftside_Div from './components/Leftside_Div';
-
-export default function StaffDonor() {
+import React, { useState } from "react";
+import { Form, Button, Col, Row, Container } from "react-bootstrap";
+import './StudentDonor.css';
+// import InputBoxAnimation from "./Lottie/InputBoxAnimation";
+import Leftside_Div from "./components/Leftside_Div";
+const StaffDonor = () => {
+  const [validated, setValidated] = useState(false);
+  const [showLottie, setShowLottie] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
-    rollNo: '',
-    mobile: '',
-    email: '',
-    college: '',
-    department: '',
-    year: '',
-    section: '',
-    venue: '',
-    bloodGroup: '',
-    gender: '',
+    name: "",
+    Employee_Id: "",
+    mobile: "",
+    email: "",
+    college: "",
+    department: "",
+    venue: "",
+    bloodGroup: "",
+    gender: "",
+    timesDonatedInCampus: "",
+   timesDonatedOutsideCampus: "",
   });
-
+  const validateEmail = (email) => {
+    const domainPattern = /^[\w-\.]+@(gmail\.com|acoe\.edu\.in|acet\.edu\.in|au\.in|aec\.edu\.in)$/;
+    return domainPattern.test(email);
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const validateForm = () => {
-    const mobileRegex = /^[0-9]{10}$/;
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    event.preventDefault(); // Prevent page refresh
 
-    if (!formData.mobile || !mobileRegex.test(formData.mobile)) {
-      alert('Please enter a valid 10-digit mobile number.');
-      return false;
+    if (!validateEmail(formData.email)) {
+      setValidated(true);
+      return;
     }
 
-    if (!formData.email || !emailRegex.test(formData.email)) {
-      alert('Please enter a valid email address.');
-      return false;
+    if (formData.timesDonatedOutsideCampus <= 0) {
+      setValidated(true);
+      return;
     }
 
-    return true;
-  };
+    if (formData.timesDonatedInCampus <= 0) {
+      setValidated(true);
+      return;
+    }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+    // if ( (formData.name.length > 0 &&formData.name.length <= 8)) {
+    //   setValidated(true);
+    //   return;
+    // }
+    if (formData.Employee_Id.length !== 10) {
+      setValidated(true);
+      return;
+    }
+     if(form.checkValidity() === false) {
+      event.stopPropagation(); // Prevent submission if form is invalid
+      setValidated(true); // Only set validation state if invalid
+    }
+    else {
+      // Form is valid, log the form data
+      console.log(formData);
 
-    const isValid = validateForm();
-
-    if (isValid) {
-      console.log('Form submitted:', formData);
-
+      // Reset the form data after successful submission
       setFormData({
-        name: '',
-        rollNo: '',
-        mobile: '',
-        email: '',
-        college: '',
-        department: '',
-        year: '',
-        section: '',
-        venue: '',
-        bloodGroup: '',
-        gender: '',
+        name: "",
+        Employee_Id: "",
+        mobile: "",
+        email: "",
+        college: "",
+        department: "",
+        venue: "",
+        bloodGroup: "",
+        gender: "",
+        timesDonatedInCampus: "",
+        timesDonatedOutsideCampus: "",
       });
+
+      // Reset form validation state
+      setValidated(false); // Clear validation state after resetting form
     }
   };
+
+     {/* <InputBoxAnimation/> */}
 
   return (
     <>
-      <div className='options'>
-        <Leftside_Div/>
-        <div className='form'>
-        <form onSubmit={handleSubmit} className='donor'>
-          <h2>Donor Details</h2>
-          <br />
-          <div>
-            <label>
-              Name of the Donor: <br />
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
+    <Container fluid className="form-container d-flex justify-content-center align-items-center">
+
+      <Form noValidate validated={validated} onSubmit={handleSubmit} className="p-4 form-box">
+        <h3 className="text-center mb-4">Blood Donation Form(Staff)</h3>
+
+<Row className="mb-3">
+
+<Form.Group as={Col} xs={12} sm={6} md={6} controlId="name">
+     <Form.Label>Name</Form.Label>
+     <Form.Control
+       required
+       type="text"
+       placeholder="Enter your name"
+       name="name"
+       value={formData.name}
+       onChange={handleChange}
+      //  isInvalid={validated && (formData.name.length > 0 &&formData.name.length <= 8)} // This will show invalid state if the length is <= 8
+      />
+     <Form.Control.Feedback type="invalid">
+         Please provide your full name.
+      </Form.Control.Feedback>
+ </Form.Group>
+
+
+          <Form.Group as={Col} xs={12} sm={6} md={6} controlId="Employee_Id">
+            <Form.Label>Employee Id</Form.Label>
+            <Form.Control
+              required
+              type="text"
+              placeholder="Enter Employee Id"
+              name="Employee_Id"
+              value={formData.Employee_Id}
+              onChange={handleChange}
+              isInvalid={validated && formData.Employee_Id.length !=10}
+            />
+            <Form.Control.Feedback type="invalid">
+              Please provide your Employee Id .
+            </Form.Control.Feedback>
+          </Form.Group>
+
+          <Form.Group as={Col} xs={12} sm={6} md={6} controlId="mobile">
+            <Form.Label>Mobile Number</Form.Label>
+            <Form.Control
+              required
+              type="tel"
+              placeholder="Enter Mobile Number"
+              name="mobile"
+              value={formData.mobile}
+              onChange={handleChange}
+              pattern="[0-9]{10}"
               />
-            </label>
-          </div>
-          <div>
-            <label>
-              Enter Roll No: <br />
-              <input
-                type="text"
-                name="rollNo"
-                value={formData.rollNo}
-                onChange={handleChange}
-                required
+            <Form.Control.Feedback type="invalid">
+              Please provide a valid mobile number.
+            </Form.Control.Feedback>
+          </Form.Group>
+
+
+
+          <Form.Group as={Col} xs={12} sm={6} md={6} controlId="email">
+            <Form.Label>Email</Form.Label>
+            <Form.Control
+              required
+              type="email"
+              placeholder="Enter Email"
+              name="email"
+              value={formData.email}
+              isInvalid={validated && !validateEmail(formData.email)}
+              onChange={handleChange}
               />
-            </label>
-          </div>
+            <Form.Control.Feedback type="invalid">
+              Please provide a valid email.
+            </Form.Control.Feedback>
+          </Form.Group>
 
-          <div>
-            <label>
-              Mobile Number: <br />
-              <input
-                type="number"
-                name="mobile"
-                value={formData.mobile}
-                onChange={handleChange}
-                required
-              />
-            </label>
-          </div>
+          <Form.Group as={Col} xs={12} sm={6} md={6} controlId="college">
+  <Form.Label>College</Form.Label>
+  <Form.Control
+    required
+    as="select" // Change input type to select dropdown
+    name="college"
+    value={formData.college}
+    onChange={handleChange}
+    >
+    <option value="">Choose...</option> {/* Placeholder option */}
+    <option value="Aditya University">Aditya University</option>
+    <option value="Aditya Engineering College">Aditya Engineering College</option>
+    <option value="Aditya College of Engineering & Technology">Aditya College of Engineering & Technology</option>
+    <option value="Aditya College of Engineering">Aditya College of Engineering</option>
+    <option value="Aditya Polytechnic Colleges">Aditya Polytechnic Colleges</option>
+    <option value="Aditya Global Business Schools">Aditya Global Business Schools</option>
+    <option value="Aditya Pharmacy College">Aditya Pharmacy College</option>
+    <option value="Aditya College of Pharmacy">Aditya College of Pharmacy</option>
+    <option value="Aditya Forensic Science">Aditya Forensic Science</option>
+    <option value="Physical Education">Physical Education</option>
+  </Form.Control>
+  <Form.Control.Feedback type="invalid">
+    Please select your college.
+  </Form.Control.Feedback>
+          </Form.Group>
 
-          <div>
-            <label>
-              Email Id: <br />
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </label>
-          </div>
 
-          <div>
-            <label>
-              College: <br />
-              <select name="college" value={formData.college} onChange={handleChange} required>
-                <option value="">--Select College--</option>
-                <option value="AEC">Aditya Engineering College</option>
-                <option value="ACET">Aditya College of Engineering &amp; Technology </option>
-                <option value="ACOE">Aditya College of Engineering</option>
-                <option value="APTC">Aditya Polytechnic Colleges</option>
-                <option value="AGBS">Aditya Global Business Schools</option>
-                <option value="APC">Aditya Pharmacy College</option>
-                <option value="ACP">Aditya College of Pharmacy</option>
-                <option value="AFSC">Aditya Forensic Science</option>
-                <option value="BPED">Physical Education</option>
-              </select>
-            </label>
-          </div>
+          <Form.Group as={Col} xs={12} sm={6} md={6} controlId="department">
+  <Form.Label>Department</Form.Label>
+  <Form.Control
+    required
+    as="select" // Change input type to select dropdown
+    name="department"
+    value={formData.department}
+    onChange={handleChange}
+  >
+    <option value="">Choose...</option> {/* Placeholder option */}
+    <option value="CSE">Computer Science Engineering (CSE)</option>
+    <option value="AIML">Artificial Intelligence & Machine Learning (AIML)</option>
+    <option value="ECE">Electronics and Communication Engineering (ECE)</option>
+    <option value="EEE">Electrical and Electronics Engineering (EEE)</option>
+    <option value="ME">Mechanical Engineering (ME)</option>
+    <option value="CE">Civil Engineering (CE)</option>
+    <option value="IT">Information Technology (IT)</option>
+    <option value="MBA">Master of Business Administration (MBA)</option>
+    <option value="Pharmacy">Pharmacy</option>
+    <option value="B.PHARMACY">B.PHARMACY</option>
+    <option value="M.PHARACY(ANALYSIS)">M.PHARACY(ANALYSIS)</option>
+    <option value="M.PHARACY(PHARMACEUTICS)">M.PHARACY(PHARMACEUTICS)</option>
+    <option value="PHARM.D">PHARM.D</option>
+    <option value="PHARM.D (PB)">PHARM.D (PB)</option>
+    <option value="MCA">MCA</option>
+    <option value="PT">PT</option>
+    <option value="Forensic Science">Forensic Science</option>
+    <option value="Physical Education">Physical Education</option>
+  </Form.Control>
+  <Form.Control.Feedback type="invalid">
+    Please select your department.
+  </Form.Control.Feedback>
+          </Form.Group>
 
-          <div>
-            <label>
-              Department: <br />
-              <select name="department" value={formData.department} onChange={handleChange} required>
-                <option value="">--Select Department--</option>
-                <option value="AE">AE</option>
-                <option value="AMBA"> AMBA</option>
-                <option value="B.PHARMACY"> B.PHARMACY</option>
-                <option value="BBA"> BBA</option>
-                <option value="BM"> BM</option>
-                <option value="CIVIL"> CIVIL</option>
-                <option value="CME"> CME</option>
-                <option value="CSE"> CSE</option>
-                <option value="ECE"> ECE</option>
-                <option value="EEE"> EEE</option>
-                <option value="forensic"> forensic</option>
-                <option value="GMBA"> GMBA</option>
-                <option value="IMBA"> IMBA</option>
-                <option value="IT"> IT</option>
-                <option value="M.PHARACY(ANALYSIS)"> M.PHARACY(ANALYSIS)</option>
-                <option value="M.PHARACY(PHARMACEUTICS)"> M.PHARACY(PHARMACEUTICS)</option>
-                <option value="M.PHARM"> M.PHARM</option>
-                <option value="MBA"> MBA</option>
-                <option value="ME"> ME</option>
-                <option value="MECH"> MECH</option>
-                <option value="PET"> PET</option>
-                <option value="PGDM"> PGDM</option>
-                <option value="PHARM.D"> PHARM.D</option>
-                <option value="PHARM.D (PB)"> PHARM.D (PB)</option>
-                <option value="PT"> PT</option>
-                <option value="MCA"> MCA</option>
-                <option value="BPED"> BPED</option>
-                <option value="AI&amp;ML">AI&amp;ML</option>
-                <option value="IoT">IoT</option>
-              </select>
-            </label>
-          </div>
 
-          <div>
-            <label>
-              Year: <br />
-              <select name="year" value={formData.year} onChange={handleChange} required>
-                <option value="">--Select Year--</option>
-                <option value="I">I</option>
-                <option value="II">II</option>
-                <option value="III">III</option>
-                <option value="IV">IV</option>
-                <option value="V">V</option>
-                <option value="VI">VI</option>
-              </select>
-            </label>
-          </div>
+         <Form.Group as={Col} xs={12} sm={6} md={6} controlId="venue">
+  <Form.Label>Venue</Form.Label>
+  <Form.Control
+    required
+    as="select" // Change input type to select dropdown
+    name="venue"
+    value={formData.venue}
+    onChange={handleChange}
+    >
+    <option value="">Choose...</option> {/* Placeholder option */}
+    <option value="CB">Cotton Bhavan</option>
+    <option value="KLRB">KL Rao Bhavan</option>
+    <option value="BGB">Bill Gates Bhavan</option>
+    <option value="VSB">Visweswaraya Bhavan</option>
+    <option value="CVRB">CV Raman Bhavan</option>
+    <option value="RB">Ramanujan Bhavan</option>
+    <option value="NB">Abdul Kalam Bhavan</option>
+    <option value="AKB">Newton Bhavan</option>
+    <option value="ACP">Aditya College of Pharmacy</option>
+  </Form.Control>
+  <Form.Control.Feedback type="invalid">
+    Please select a venue.
+  </Form.Control.Feedback>
+</Form.Group>
 
-          <div>
-            <label>
-              Section: <br />
-              <select name="section" value={formData.section} onChange={handleChange} required>
-                <option value="">--Select Section--</option>
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">C</option>
-                <option value="D">D</option>
-              </select>
-            </label>
-          </div>
 
-          <div>
-            <label>
-              Venue: <br />
-              <select name="venue" value={formData.venue} onChange={handleChange} required>
-                <option value="">--Select Venue--</option>
-                <option value="CB">Cotton Bhavan</option>
-                <option value="KLRB">KL Rao Bhavan</option>
-                <option value="BGB">Billgates Bhavan</option>
-                <option value="VSB">Visweswaraya Bhavan</option>
-                <option value="CVRB">CV Raman Bhavan</option>
-                <option value="RB">Ramanujan Bhavan </option>
-                <option value="NB">Newton Bhavan </option>
-                <option value="AKB">Abdul Kalam Bhavan </option>
-                <option value="ACP"> Aditya College of Pharmacy</option>
-              </select>
-            </label>
-          </div>
 
-          <div>
-            <label>
-              Blood Group: <br />
-              <select name="bloodGroup" value={formData.bloodGroup} onChange={handleChange} required>
-                <option value="">--Select Blood Group--</option>
-                <option value="A+">A+</option>
-                <option value="O+">O+</option>
-                <option value="B+">B+</option>
-                <option value="AB+">AB+</option>
-                <option value="A-">A-</option>
-                <option value="O-">O-</option>
-                <option value="B-">B-</option>
-                <option value="AB-">AB-</option>
-                <option value="UnKnown">UnKnown</option>
-              </select>
-            </label>
-          </div>
+          <Form.Group as={Col} xs={12} sm={6} md={6} controlId="bloodGroup">
+            <Form.Label>Blood Group</Form.Label>
+            <Form.Control
+              required
+              as="select"
+              name="bloodGroup"
+              value={formData.bloodGroup}
+              onChange={handleChange}
+              >
+              <option value="">Choose...</option>
+              <option>A+</option>
+              <option>A-</option>
+              <option>B+</option>
+              <option>B-</option>
+              <option>O+</option>
+              <option>O-</option>
+              <option>AB+</option>
+              <option>AB-</option>
+              <option>Unknown</option>
+            </Form.Control>
+            <Form.Control.Feedback type="invalid">
+              Please select your blood group.
+            </Form.Control.Feedback>
+          </Form.Group>
 
-          <div>
-            <label>Gender:</label>
-            <label>
-              <br />
-              <input
-                className='gender'
-                type="radio"
-                name="gender"
-                value="Male"
-                checked={formData.gender === 'Male'}
-                onChange={handleChange}
-                required
-              />
-              Male
-            </label>
-            <label> <br />
-              <input
-                className='gender'
-                type="radio"
-                name="gender"
-                value="Female"
-                checked={formData.gender === 'Female'}
-                onChange={handleChange}
-                required
-              />
-              Female
-            </label>
-          </div>
+          <Form.Group as={Col} xs={12} sm={6} md={6} controlId="gender">
+            <Form.Label>Gender</Form.Label>
+            <Form.Control
+              required
+              as="select"
+              name="gender"
+              value={formData.gender}
+              onChange={handleChange}
+              >
+              <option value="">Choose...</option>
+              <option>Male</option>
+              <option>Female</option>
+              {/* <option>Other</option> */}
+            </Form.Control>
+            <Form.Control.Feedback type="invalid">
+              Please select your gender.
+            </Form.Control.Feedback>
+          </Form.Group>
 
-          <div className='sub'>
-            <button type="submit" className='submit_btn'>Submit</button>
-          </div>
-        </form>
-        </div>
-      </div>
-    </>
+
+  <Form.Group as={Col} xs={12} sm={6} md={6} controlId="timesDonated">
+  <Form.Label>No. of Times Donated</Form.Label>
+  <Row>
+    <Col xs={12} sm={6} md={6}>
+      <Form.Control
+        required
+        type="number"
+        placeholder="In Campus"
+        name="timesDonatedInCampus"
+        value={formData.timesDonatedInCampus}
+        isInvalid={validated && (!formData.timesDonatedInCampus || formData.timesDonatedInCampus <= 0)}
+        onChange={handleChange}
+        />
+      <Form.Control.Feedback type="invalid">
+        {!formData.timesDonatedInCampus
+          ? "Please enter the number of times you've donated in campus."
+          : "Please enter a valid number."
+        }
+      </Form.Control.Feedback>
+    </Col>
+    <Col xs={12} sm={6} md={6}>
+      <Form.Control
+        required
+        type="number"
+        placeholder="Outside Campus"
+        name="timesDonatedOutsideCampus"
+        value={formData.timesDonatedOutsideCampus}
+        isInvalid={validated && (!formData.timesDonatedOutsideCampus || formData.timesDonatedOutsideCampus <= 0)}
+        onChange={handleChange}
+      />
+      <Form.Control.Feedback type="invalid">
+        {!formData.timesDonatedOutsideCampus
+          ? "Please enter the number of times you've donated outside campus."
+          : "Please enter a valid number."
+        }
+      </Form.Control.Feedback>
+    </Col>
+  </Row>
+         </Form.Group>
+
+
+
+
+        </Row>
+
+        <Button type="submit" className="w-100">Submit</Button>
+      </Form>
+    </Container>
+          </>
   );
-}
+};
+
+export default StaffDonor;

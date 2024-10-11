@@ -6,6 +6,7 @@ import StaffDonor from './StaffDonor';
 import OtherDonor from './OtherDonor';
 import Volunteer from './Volunteer';
 import GetImages from './GetImages';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
