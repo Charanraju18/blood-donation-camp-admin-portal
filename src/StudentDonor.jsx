@@ -92,7 +92,7 @@ const StudentDonor = () => {
 
   return (
     <Container fluid className="form-container d-flex justify-content-center align-items-center">
-      
+
       <Form noValidate validated={validated} onSubmit={handleSubmit} className="p-4 form-box">
         <h3 className="text-center mb-4">Blood Donation Form(Student)</h3>
 
@@ -112,6 +112,7 @@ const StudentDonor = () => {
      <Form.Control.Feedback type="invalid">
          Please provide your full name.
       </Form.Control.Feedback>
+      
  </Form.Group>
 
 
