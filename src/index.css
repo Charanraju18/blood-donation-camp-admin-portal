@@ -346,6 +346,7 @@
 	 }
 	 .left_side_div{
 		height: 12vh;
+		min-height: 7vh;
 	 }
 }
 
@@ -370,6 +371,7 @@
 	 }
 	 .left_side_div{
 		height: 13vh;
+		min-height: 8vh;
 	 }
 }
 
@@ -394,6 +396,7 @@
 	 }
 	 .left_side_div{
 		height: 14vh;
+		min-height: 9vh;
 	 }
 }
 @media screen and (min-width: 768px) and (max-width: 1200px) {
@@ -417,6 +420,7 @@
 	 }
 	 .left_side_div{
 		height: 15vh;
+		min-height: 10vh;
 	 }
 }
 

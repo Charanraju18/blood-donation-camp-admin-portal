@@ -27,12 +27,17 @@
   .total-container{
 	display: flex;
   }
-  .left{
-	height: 100%;
-  }
   @media screen and (max-width:1200px){
 	.total-container{
 		display: flex;
 		flex-direction: column;
 	}
+  }
+  @media screen and (min-width:768px) and (max-width:1200px){
+	 .total-container{
+		height: fit-content;
+	 }
+	 .left_side_div{
+		height: 15vh;
+	 }
   }

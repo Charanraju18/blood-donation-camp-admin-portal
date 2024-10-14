@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Form, Button, Col, Row, Container } from "react-bootstrap";
 import './StudentDonor.css';
+import Leftside_Div from "./components/Leftside_Div";
 ///npm install bootstrap
 ///import 'bootstrap/dist/css/bootstrap.min.css'; keep this inside app.jsx or main.jsx
 const OtherDonor = () => {
