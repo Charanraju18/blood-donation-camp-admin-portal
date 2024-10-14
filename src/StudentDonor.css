@@ -1,6 +1,10 @@
 .form-container {
 	min-height: 100vh;
 	background-color: #f5f5f5;
+	width: 75%;
+  }
+  .left{
+	width: 25%;
   }
 
   .form-box {

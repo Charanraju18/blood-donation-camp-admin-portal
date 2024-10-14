@@ -54,7 +54,7 @@
 }
 
 .left_side_div {
-	width: 25%;
+	width: 17.5%;
 	min-height: 100vh;
 	height: 100%;
 	color: white;
@@ -65,7 +65,7 @@
 }
 
 .right_side_div {
-	width: 75%;
+	width: 82.5%;
 	height: 100%;
 	background: linear-gradient(to bottom, white, rgb(250, 209, 209),rgb(252, 167, 167),rgb(248, 87, 87));
 	padding: 4%;
