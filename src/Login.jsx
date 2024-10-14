@@ -38,7 +38,7 @@ export default function Login() {
           <label>Password</label>
           <br />
           <input type="password" name='userPassword' placeholder='Enter password' onChange={handleChange}/>
-          <center><button onClick={handleSubmit}>Submit</button></center>
+          <center><button onClick={handleSubmit} className='button'>Submit</button></center>
         </div>
       </div>
     </>

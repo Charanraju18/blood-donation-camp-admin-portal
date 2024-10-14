@@ -88,6 +88,8 @@ const StaffDonor = () => {
 
   return (
     <>
+    <div className="total-container">
+    <Leftside_Div className="left"/>
     <Container fluid className="form-container d-flex justify-content-center align-items-center">
 
       <Form noValidate validated={validated} onSubmit={handleSubmit} className="p-4 form-box">
@@ -344,6 +346,7 @@ const StaffDonor = () => {
         <Button type="submit" className="w-100">Submit</Button>
       </Form>
     </Container>
+    </div>
           </>
   );
 };

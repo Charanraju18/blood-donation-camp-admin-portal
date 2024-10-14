@@ -10,7 +10,7 @@ function Next_btn({ comp , fun}) {
 
     return (
         <div className='next_btn_div'>
-            <button onClick={handleNext}>Next</button>
+            <button onClick={handleNext} className='button'>Next</button>
         </div>
     );
 }
