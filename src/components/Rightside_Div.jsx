@@ -31,6 +31,10 @@ function Rightside_Div(props) {
         setComp('/getimages/');
         setSelectedOption('gallery');
     };
+    const handleEventClick = () => {
+        setComp('/addEvent/');
+        setSelectedOption('event');
+    };
 
     return (
         <div className="right_side_div">
@@ -74,6 +78,12 @@ function Rightside_Div(props) {
                     onClick={handleImagesClick}
                 >
                     <h1>Gallery</h1>
+                </div>
+                <div
+                    className={`option_div op7 event ${selectedOption === 'event' ? 'selected' : ''}`}
+                    onClick={handleEventClick}
+                >
+                    <h1>Add Event</h1>
                 </div>
             </div>
             <Next_btn comp={comp} fun={props.fun}/>
