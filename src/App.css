@@ -1,0 +1,45 @@
+*{
+	margin: 0;
+	padding: 0;
+}.vol_container{
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	position: relative;
+}
+.vol_left{
+	width: 25%;
+	height: 100%;
+}
+.vol_right{
+	width: 75%;
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* position: relative; */
+}
+.add_volunteer,
+.edit_volunteer{
+	width: 25rem;
+	height: 25%;
+	border: 2px solid black;
+	border-radius: 1rem;
+	margin: 5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: all .3s ease;
+}
+.vol_nxt_btn{
+	height: fit-content;
+	width: fit-content;
+	position: absolute;
+	bottom: 0;
+}
+.selected{
+	background-color: skyblue;
+	color: white;
+	transform: scale(1.1);
+}

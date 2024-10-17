@@ -4,7 +4,7 @@ function Next_btn({ comp , fun}) {
 	const navigate = useNavigate();
 
     const handleNext = () => {
-        fun();
+        console.log("reached")
         navigate(comp)
     };
 

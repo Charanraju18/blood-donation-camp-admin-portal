@@ -6,6 +6,8 @@ import React from 'react'
 
 export default function EditVolunteers() {
   return (
-    <></>
+    <>
+      <h1>delete volunteer</h1>
+    </>
   )
 }

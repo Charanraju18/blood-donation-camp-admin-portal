@@ -24,7 +24,7 @@ function Rightside_Div(props) {
         setSelectedOption('guest');
     };
     const handleVolunteerClick = () => {
-        setComp('/volunteer/');
+        setComp('/change_volunteer/');
         setSelectedOption('volunteer');
     };
     const handleImagesClick = () => {
