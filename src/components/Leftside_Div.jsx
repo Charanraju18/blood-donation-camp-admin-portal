@@ -11,7 +11,7 @@ function Leftside_Div(props){
 	}
 	return(
 		<div className="left_side_div">
-			<div className="progress-bar">
+			{/* <div className="progress-bar">
 				<div className='step' style={spanStyle}>
 					<div className='outline'>
 						<span >1</span>
@@ -22,7 +22,7 @@ function Leftside_Div(props){
 						<span>2</span>
 					</div>
 				</div>
-			</div>
+			</div> */}
 		</div>
 	)
 }

@@ -28,7 +28,7 @@ function App() {
           <Route path='/add_volunteer/' element={<AddVolunteers />} />
           <Route path='/update_volunteer/' element={<EditVolunteers />} />
           <Route path='/addEvent/' element={<AddEvent />} />
-        </Routes>
+        </Routes> 
       </Router>
     </>
   );
