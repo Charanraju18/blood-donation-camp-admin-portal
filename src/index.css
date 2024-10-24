@@ -205,9 +205,10 @@
 		content: none;
 		}
         .left_side_div{
-            background-image: url('./assets/lsd_img_1200.jpeg');
-            background-size: cover;
-            background-position: center;
+            background-image: url('./assets/blood-donation-transfusion-people-HYM5CK.jpg');
+            background-size: contain;
+            /* background-position: center; */
+			background-repeat: no-repeat;
         }
   }
   .left_side_div .progress-bar{

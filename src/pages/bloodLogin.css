@@ -1,0 +1,171 @@
+:root {
+    --background: #f7c4bf;
+    --color: #ffffff;
+    --button-hover-color: #ff6385;
+    --text-color: #000000;
+    --primary-color: #ff6385; /* Ensure this is defined */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+.rj_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    /* background: var(--background); */
+    color: var(--text-color);
+    letter-spacing: 1px;
+    transition: background 0.2s ease;
+}
+
+.rj_login-container {
+    position: relative;
+    width: 22.2rem;
+    z-index: 1; /* Ensure the container is on top */
+}
+
+.rj_form-container {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 36px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    background: rgba(239, 132, 184, 0.2);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 2;
+    position: relative;
+}
+
+.rj_login-container form input {
+    display: block;
+    padding: 14.5px;
+    width: 100%;
+    margin: 1rem 0;
+    color: var(--text-color); /* Changed to --text-color for consistency */
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    opacity: 0.7;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    font-size: 15px;
+    position: relative;
+    z-index: 3; /* Ensures inputs are interactable */
+}
+
+.rj_login-container form input:focus {
+    box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.2);
+}
+
+.rj_login-container form button {
+    background-color: rgb(255, 79, 79);
+    color: var(--color);
+    display: block;
+    padding: 13px;
+    border-radius: 5px;
+    outline: none;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    transition: all 0.1s ease-in-out;
+    border: none;
+    opacity: 1;
+}
+
+.rj_login-container form button:hover {
+    background-color:rgb(255, 58, 58);
+    box-shadow: 0 0 5px rgb(173, 145, 145);
+    transform: scale(1.02);
+}
+
+.rj_circle {
+    width: 8rem;
+    height: 8rem;
+    background: var(--button-hover-color);
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1; /* Puts the circles behind the form */
+}
+
+.rj_illustration {
+    width: 200px;height: 300px;
+    position: absolute;
+    top: -32%;
+    right: -71px;
+    width: 90%;
+    z-index: 0; /* Keep illustration behind form elements */
+}
+
+.rj_circle-one {
+    top: 0;
+    left: 0;
+    transform: translate(-45%, -45%);
+}
+
+.rj_circle-two {
+    bottom: 0;
+    right: 0;
+    transform: translate(45%, 45%);
+}
+
+.register-forget {
+    display: flex;
+    justify-content: space-between;
+}
+
+.rj_login-container form label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    display: block;
+    z-index: 3; /* Make sure labels are interactable */
+}
+@media screen and (max-width : 510px) {
+    .rj_container {
+        width: 100%;
+        height: 100svh;
+    }
+    .rj_form-container {
+        width: 300px;
+        height: 400px;
+        margin: 0px 0px 0px 2rem;
+    }
+    .illustration {
+        width: 130px;height: 130px;
+        top: 0%;right: 0%;
+    }
+    .rj_circle{
+        width: 80px;height: 80px;
+    }
+    .rj_circle-one{
+    top: -1%;
+    left: 9%;
+    }
+    .rj_circle-two{
+    bottom: 1%;
+    right: 7%;
+    }
+}

@@ -1,16 +1,18 @@
 import Login from './Login';
+// import Login from './pages/bloodLogin';
 import SelectOption from './SelectOption';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import StudentDonor from './StudentDonor';
 import StaffDonor from './StaffDonor';
 import OtherDonor from './OtherDonor';
-import Volunteer from './Volunteer';
 import GetImages from './GetImages';
 import ChangeVolunteers from './Volunteers/ChangeVolunteers';
 import AddVolunteers from './Volunteers/AddVolunteers';
 import EditVolunteers from './Volunteers/EditVolunteers';
 import AddEvent from './AddEvent';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+// import Login from './Login';
 
 function App() {
   return (
@@ -28,7 +30,7 @@ function App() {
           <Route path='/add_volunteer/' element={<AddVolunteers />} />
           <Route path='/update_volunteer/' element={<EditVolunteers />} />
           <Route path='/addEvent/' element={<AddEvent />} />
-        </Routes> 
+        </Routes>
       </Router>
     </>
   );
